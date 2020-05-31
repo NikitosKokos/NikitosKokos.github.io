@@ -1,0 +1,73 @@
+.questions{
+    width: 100%;
+    // height: 100vh;
+    padding: 200px 0;
+    background: #fff;
+   
+    .block{
+        &__row{
+             display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+        }
+        &__item{
+            width: 100%;
+        }
+        &__title{
+            font-size: 20px;
+            position: relative;
+            cursor: pointer;
+            width: 100%;
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;    
+            padding: 15px 20px;
+            box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+            -2px -2px 12px rgba(255, 255, 255, 0.5),
+            inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+            2px 2px 8px rgba(0, 0, 0, 0.15);
+            span{
+                transition: all .3s ease-in;
+            }
+            &.active-title span:before,&.active-title span:after{
+                background: red;
+                // transform-origin: left;
+                // transform: rotate(90deg);
+            }
+            &.active-title span{
+                
+                transform: rotate(90deg); 
+            }
+        }
+        &__title span:before,&__title span:after{
+            content: '';
+            width: 10px;
+            height: 1px;
+            display: block;
+            background: #111;
+            // position: absolute;
+            // top: 8px;
+            transition: all .3s ease;
+            
+        }
+        &__title span:before{
+            transform-origin: right;
+            transform: rotate(40deg);
+        }
+        &__title span:after{
+            transform-origin: right;
+            transform: rotate(-40deg);
+        }
+        &__text{
+            padding-top: 10px;
+            display: none;
+            padding: 30px 20px;
+            box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+            inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+            inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+            inset 2px 2px 8px rgba(0, 0, 0, 0.15);
+        }
+    }
+}

@@ -1,0 +1,114 @@
+.header {
+    position: fixed;
+    width: 100%;
+    background: #111;
+    top: 0;
+    height: 80px;
+    color: white;
+    transition: all .5s ease-in;
+    z-index: 99;
+
+    a {
+        color: white;
+    }
+
+    &__logo {
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+    &__nav-menu {
+        display: flex;
+        align-items: center;
+        nav {
+            ul {
+                display: flex;
+           
+              
+                li {
+                    margin-right: 30px;
+                    position: relative; 
+                
+                        .menu-element{
+                            &:after {
+                               background-color: #111;
+                               display: block;
+                               content: "";
+                               height: 2px;
+                               width: 0%;
+                               left: 50%;
+                               top: 20px;
+                               position: absolute;
+                               -webkit-transition: width 0.3s ease-in-out;
+                               -moz--transition: width 0.3s ease-in-out;
+                               transition: width 0.3s ease-in-out;
+                               -webkit-transform: translateX(-50%);
+                               -moz-transform: translateX(-50%);
+                               transform: translateX(-50%);
+                               transition: all .3s ease-in-out;
+                             } 
+                             &_active{
+                                &:after {
+                                  width: 100%;
+                                }                                     
+                                }                       
+                         }
+                    span{
+                        width: 100%;
+                        height: 2px;
+                        background: rgb(255, 255, 255);
+                        position: absolute;
+                        bottom: -7px;
+                        transition: all .3s ease-in;
+                        opacity: 0;
+                     
+                    }
+              
+                  
+                } 
+             }
+            }
+        
+
+        .languages {
+           &__icon{
+               cursor: pointer;
+               width: 25px;
+           }
+
+        }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        transition: all .4s ease-in;
+    }
+}
+
+.header_active {
+    height: 50px;
+    transition: all .5s ease-in-out;
+
+    .header__row {
+        height: 50px;
+    }
+}
+
+.header_active-white{
+    background: white;
+    color: #111;    
+    nav a {
+    color: #111;
+}   
+    svg{
+        path{
+            fill: #111; 
+        }
+       
+    }
+
+}
+
