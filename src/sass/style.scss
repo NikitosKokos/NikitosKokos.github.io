@@ -2,6 +2,7 @@
 @import './base/mixins';
 
 
+
 @import './blocks/zeroing';
 @import './blocks/preloader';
 @import './blocks/header';
@@ -12,6 +13,7 @@
 @import './blocks/forms';
 @import './blocks/footer';
 @import './blocks/spoler';
+@import './blocks/loader';
 
 
 .wrapper {
@@ -292,3 +294,4 @@
         }
     }
    
+@import './base/media';
