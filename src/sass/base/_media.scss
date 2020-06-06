@@ -15,7 +15,14 @@
     .menu-btn{
         display: block;
     }
-   
+    .about{
+        &__row{
+            flex-direction: column;
+        }
+        &__image img{
+            border-radius: 10px 10px 0 0; 
+        }
+    }
     .header{
         .menu{
            nav{
@@ -60,21 +67,46 @@
         }
 
         }   
-    }
-    .header_active-white{
+        .header_active-white{
          .menu{
             nav  {
                 ul{
                     background: #fff;
+                    color: #111;
                 }
             }   
          }  
      
-}
+} 
+
+    .section-main{
+        &__title{
+            font-size: 30px;
+        }
+        &__subtitle{
+            font-size: 16px;
+            line-height: 21px;
+        }
+    }
+    }
+   
 
 
 @media (max-width: 767px){
     ._container {
         max-width: none;
+    }
+}
+
+@media (max-width: 450px){
+    .section-main{
+        &__title{
+            
+            font-size: 25px;
+        }
+        &__subtitle{
+            font-size: 13px;
+            line-height: 18px;
+        }
     }
 }

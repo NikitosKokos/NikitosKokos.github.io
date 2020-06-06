@@ -1,3 +1,10 @@
+@@include('jquery.wavify.js');
+@@include('wavify.js');
+
+// exports
+$( document ).ready(function() {
+
+
 // Cache selectors
 var lastId,
     topMenu = $("#top-menu"),
@@ -43,14 +50,14 @@ $(window).scroll(function(){
            .end().filter("[href='#"+id+"']").parent().addClass("menu-element_active");
      }                   
   });
-
-var myWave = $("#myID").wavify({
-  height: 550,
-  bones: 6,
-  amplitude: 80,
-  color: "#62a6ff",
-  speed: 0.25,
-});
+  // Wave
+// var myWave = $("#myID").wavify({
+//   height: 550,
+//   bones: 6,
+//   amplitude: 80,
+//   color: "#62a6ff",
+//   speed: 0.25,
+// });
 var myWave = $("#svg").wavify({
   height: 50,
   bones: 5,
@@ -59,6 +66,16 @@ var myWave = $("#svg").wavify({
   speed: 0.25,
 });
 
+if(window.innerWidth <= 992){
+    myWave = $("#svg").wavify({
+    height: 50,
+    bones: 5,
+    amplitude: 50,
+    color: "#111",
+    speed: 0.25,
+  });
+}
+// header
 $(window).scroll(function (event) {
   let s = $(this).scrollTop();
   let w = $(this).outerWidth();
@@ -81,7 +98,7 @@ $(window).scroll(function (event) {
   }
   // console.log(t);
   // console.log(s);
-  console.log(p);
+  // console.log(p);
   $(".svg-parallax").css("transform", `translateY(${100 - p}%)`);
 });
 
@@ -109,6 +126,7 @@ $('.block__title').click(function(e) {
   $(this).toggleClass("active-title").next().slideToggle(300);
 });
 
+// menu
 $('.menu-btn').on('click', function(e) {
   e.preventDefault();
   $(this).toggleClass('menu-btn_active');
@@ -119,9 +137,9 @@ $('.menu-btn').on('click', function(e) {
 
 $(".menu-element").on('click', function(e) {
   e.preventDefault();
-  $('.menu-btn').toggleClass('menu-btn_active');
-  $('body').toggleClass('body_hidden');
-  $('.nav ul').toggleClass('ul_active');
+  $('.menu-btn').removeClass('menu-btn_active');
+  $('body').removeClass('body_hidden');
+  $('.nav ul').removeClass('ul_active');
   
 });
 
@@ -133,6 +151,185 @@ $(".menu-element").on('click', function(e) {
     });
 
 
+    // typed.js
+  //   $(function(){
+  //      $("#header_typing").typed({
+  //     strings: [" В Африке гориллы.", " В Африке большие.", " Злые крокодилы."],
+  //     typeSpeed: 70,
+  //     backDelay: 1500,
+  //     startDelay: 2500,
+  //     loop: true,
+  //     loopCount: Infinity,
+  //     contentType: 'html',      
+  // });
+      
+      
+  //    });
+   
+     $(function(){
+      
+      
+      const typed = new Typed('#typing-header', {
+        /**
+         * @property {array} strings strings to be typed
+         * @property {string} stringsElement ID of element containing string children
+         */
+        strings: [
+          "а website",
+         "layout",
+          "adaptive",
+          "design",
+          " Wordpress",
+           "a database"
+          ],
+        stringsElement: null,
+      
+        /**
+         * @property {number} typeSpeed type speed in milliseconds
+         */
+        typeSpeed: 100,
+      
+        /**
+         * @property {number} startDelay time before typing starts in milliseconds
+         */
+        startDelay: 2500,
+      
+        /**
+         * @property {number} backSpeed backspacing speed in milliseconds
+         */
+        backSpeed: 50,
+      
+        /**
+         * @property {boolean} smartBackspace only backspace what doesn't match the previous string
+         */
+        smartBackspace: true,
+      
+        /**
+         * @property {boolean} shuffle shuffle the strings
+         */
+        shuffle: false,
+      
+        /**
+         * @property {number} backDelay time before backspacing in milliseconds
+         */
+        backDelay: 1500,
+      
+        /**
+         * @property {boolean} fadeOut Fade out instead of backspace
+         * @property {string} fadeOutClass css class for fade animation
+         * @property {boolean} fadeOutDelay Fade out delay in milliseconds
+         */
+        fadeOut: false,
+        fadeOutClass: 'typed-fade-out',
+        fadeOutDelay: 500,
+      
+        /**
+         * @property {boolean} loop loop strings
+         * @property {number} loopCount amount of loops
+         */
+        loop: true,
+        loopCount: Infinity,
+      
+        /**
+         * @property {boolean} showCursor show cursor
+         * @property {string} cursorChar character for cursor
+         * @property {boolean} autoInsertCss insert CSS for cursor and fadeOut into HTML <head>
+         */
+        showCursor: true,
+        cursorChar: '|',
+        autoInsertCss: true,
+      
+        /**
+         * @property {string} attr attribute for typing
+         * Ex: input placeholder, value, or just HTML text
+         */
+        attr: null,
+      
+        /**
+         * @property {boolean} bindInputFocusEvents bind to focus and blur if el is text input
+         */
+        bindInputFocusEvents: false,
+      
+        /**
+         * @property {string} contentType 'html' or 'null' for plaintext
+         */
+        contentType: 'html',
+      
+        /**
+         * Before it begins typing
+         * @param {Typed} self
+         */
+        onBegin: (self) => {},
+      
+        /**
+         * All typing is complete
+         * @param {Typed} self
+         */
+        onComplete: (self) => {},
+      
+        /**
+         * Before each string is typed
+         * @param {number} arrayPos
+         * @param {Typed} self
+         */
+        preStringTyped: (arrayPos, self) => {},
+      
+        /**
+         * After each string is typed
+         * @param {number} arrayPos
+         * @param {Typed} self
+         */
+        onStringTyped: (arrayPos, self) => {},
+      
+        /**
+         * During looping, after last string is typed
+         * @param {Typed} self
+         */
+        onLastStringBackspaced: (self) => {},
+      
+        /**
+         * Typing has been stopped
+         * @param {number} arrayPos
+         * @param {Typed} self
+         */
+        onTypingPaused: (arrayPos, self) => {},
+      
+        /**
+         * Typing has been started after being stopped
+         * @param {number} arrayPos
+         * @param {Typed} self
+         */
+        onTypingResumed: (arrayPos, self) => {},
+      
+        /**
+         * After reset
+         * @param {Typed} self
+         */
+        onReset: (self) => {},
+      
+        /**
+         * After stop
+         * @param {number} arrayPos
+         * @param {Typed} self
+         */
+        onStop: (arrayPos, self) => {},
+      
+        /**
+         * After start
+         * @param {number} arrayPos
+         * @param {Typed} self
+         */
+        onStart: (arrayPos, self) => {},
+      
+        /**
+         * After destroy
+         * @param {Typed} self
+         */
+        onDestroy: (self) => {}
+      });
+        
+      $("#typing-header").typed();
+  });
 
 // let active = 0;
 // const menuEl = document.querySelectorAll(".menu-element");
@@ -156,3 +353,4 @@ $(".menu-element").on('click', function(e) {
 //     }
    
 //   });
+});

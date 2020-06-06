@@ -14,8 +14,14 @@
 @import './blocks/footer';
 @import './blocks/spoler';
 @import './blocks/loader';
+@import './blocks/title';
+@import './blocks/buttons';
 
 
+
+*::selection{
+    background: #111;
+}
 .wrapper {
     
     font-size: 14px;
@@ -38,7 +44,7 @@
     }
 
     .svg-parallax {
-        z-index: 1;
+        // z-index: 1;
         position: absolute;
         transform: translateY(-100%);
     }
@@ -293,5 +299,5 @@
             }
         }
     }
-   
+
 @import './base/media';

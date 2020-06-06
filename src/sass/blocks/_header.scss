@@ -14,9 +14,10 @@
         color: white;
     }
 
-    &__logo {
+    &__logo a{
         font-weight: 700;
         font-size: 24px;
+        transition: all .3s ease-in;
     }
 
     .menu {
@@ -150,6 +151,7 @@
 .header_active-white{
     background: white;
     color: #111;   
+    
     .menu{
        .languages{
         &__menu{
@@ -164,7 +166,9 @@
         }
     }     
     } 
-
+    .header__logo a{
+        color: #111; 
+    }
     nav a {
     color: #111;
 }   
@@ -182,6 +186,7 @@
   }
     }
 
+    
 }
 
 .menu-btn {
@@ -229,7 +234,14 @@
     transform-origin: center;
   }
 }
-
+.menu-btn_active{
+    & span,
+  & span::before,
+  & span::after{
+      color: #111;
+  }
+}
 .body_hidden{
     overflow: hidden;
 }
+

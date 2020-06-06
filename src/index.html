@@ -19,10 +19,11 @@
         <span class="preloader__span3"></span>
     </div> -->
     <div class="wrapper">
+        <!-- @@include('header.html') -->
         <header class="header">
             <div class="_container">
                 <div class="header__row">
-                    <div class="header__logo">Logo</div>
+                    <div class="header__logo"><a href="index.html">Programmer<!--NikitosKokos--></a></div>
                     <div class="header__menu menu">
                         <nav class="nav" id="top-menu">
                             <ul>
@@ -53,8 +54,9 @@
 
         </header>
         <section class="section-main" >
-
-            <a href="#"><span>Button</span></a>
+            <div class="section-main__title"><h1>I will make you <span id="typing-header"></span></h1></div>
+            <div class="section-main__subtitle"><h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, ipsum iure.<br> Possimus officia rem beatae a, ullam eaque </h2></div>
+            <a href="#" class="btn"><span>Nikita</span></a>
         </section>
         <svg class="svg-parallax" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
             <defs></defs>
@@ -63,7 +65,51 @@
         <div class="_content">
 
 
-            <section class="section-wavy" id="about">
+            <section class="about" id="about">
+                <div class="title"><h3>Обо мне</h3></div>
+                <div class="_container">
+                 <div class="about__row">
+                    <div class="about__image">
+                        <img src="./img/me_about.jpg" alt="me">
+                    </div>
+                    <div class="about__descr">
+                        <div class="about__title">
+                           <h4>Nikita Tsukynov</h4> 
+                        </div>
+                        <div class="about__text">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis et quos recusandae a dolores ducimus autem ullam aperiam laboriosam, ex temporibus quaerat nulla sit quasi est maxime blanditiis error dolore.
+                            Temporibus quaerat sequi eaque consequatur possimus eum, harum vitae adipisci quae doloribus ratione odit recusandae! Nihil atque aperiam sed omnis, alias laboriosam itaque modi impedit. Blanditiis nesciunt velit inventore? Voluptas!
+                            Aliquid eum expedita soluta nam tempora odit explicabo libero quaerat aperiam facere ullam nisi, distinctio consequuntur id recusandae magnam nobis officia earum placeat esse fugiat fuga veniam! Velit, magnam harum.
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis et quos recusandae a dolores ducimus autem ullam aperiam laboriosam, ex temporibus quaerat nulla sit quasi est maxime blanditiis error dolore.
+                            Temporibus quaerat sequi eaque consequatur possimus eum, harum vitae adipisci quae doloribus ratione odit recusandae! Nihil atque aperiam sed omnis, alias laboriosam itaque modi impedit. Blanditiis nesciunt velit inventore? Voluptas!
+                            Aliquid eum expedita soluta nam tempora odit explicabo libero quaerat aperiam facere ullam nisi, distinctio consequuntur id recusandae magnam nobis officia earum placeat esse fugiat fuga veniam! Velit, magnam harum.
+                        </div>
+                        <div class="about__footer">
+                            <a href="#" class="btn btn_dark"><span>Resume</span></a>
+                            
+                        </div>
+                    </div>
+                </div>                   
+                </div>
+
+            </section>
+            <div class="slider" id="contacts">
+
+            </div>
+            <section class="section-clock" id="portfolio">
+                <div class="clock">
+                    <div class="hour">
+                        <div class="hr" id="hr"></div>
+                    </div>
+                    <div class="min">
+                        <div class="mn" id="mn"></div>
+                    </div>
+                    <div class="sec">
+                        <div class="sc" id="sc"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- <section class="section-wavy" id="about">
                 <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
                     <defs></defs>
                     <path id="myID" d="" />
@@ -82,7 +128,7 @@
                         <div class="sc" id="sc"></div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- <section class="contact" >
                 <ul>
                     <li><a href="#">
@@ -181,13 +227,16 @@
         </div>
 
     </div>
+ 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"
         integrity="sha256-3arngJBQR3FTyeRtL3muAGFaGcL8iHsubYOqq48mBLw=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"
         integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
-    <script src="./js/wavify.js"></script>
-    <script src="./js/jquery.wavify.js"></script>
-    <script src="./js/script.js"></script>
+    <!-- <script src="./js/wavify.js"></script>
+    <script src="./js/jquery.wavify.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.4/typed.min.js"></script> -->
+    <script src="./js/script.min.js"></script>
 
 </body>
 
