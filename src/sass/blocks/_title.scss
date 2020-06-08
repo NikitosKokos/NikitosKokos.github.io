@@ -1,9 +1,31 @@
 .title{
     font-weight: 70;
     font-size: 30px;
-    color: #fff;
+    color: $white;
     margin: 0 0 90px 0;
     padding-top: 100px;
     text-align: center;
+    h3{
+     position: relative;
+     display: inline-block;
+    &::before, &::after{
+        content: '';
+        position: absolute;
+        display: inline-block;
+        height: 1px;
+        width: 30px;
+        background: $light-grey;
+        top: 50%;
+        transform: translateY(-50%);
+
+    }   
+    &::before{
+        left: -45px;
+    }
+    &::after{
+        right: -45px;
+    }
+    }
+    
    
 }

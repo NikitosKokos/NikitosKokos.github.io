@@ -96,9 +96,11 @@ $(window).scroll(function (event) {
     h = document.querySelector(".header");
     h.classList.remove("header_active-white");
   }
-  // console.log(t);
-  // console.log(s);
-  // console.log(p);
+  if($('.header').hasClass("header_active-white")){
+      $('body').addClass('scrollbar');
+    }else{
+      $('body').removeClass('scrollbar');
+    }
   $(".svg-parallax").css("transform", `translateY(${100 - p}%)`);
 });
 
@@ -151,20 +153,7 @@ $(".menu-element").on('click', function(e) {
     });
 
 
-    // typed.js
-  //   $(function(){
-  //      $("#header_typing").typed({
-  //     strings: [" В Африке гориллы.", " В Африке большие.", " Злые крокодилы."],
-  //     typeSpeed: 70,
-  //     backDelay: 1500,
-  //     startDelay: 2500,
-  //     loop: true,
-  //     loopCount: Infinity,
-  //     contentType: 'html',      
-  // });
-      
-      
-  //    });
+ 
    
      $(function(){
       
@@ -353,4 +342,24 @@ $(".menu-element").on('click', function(e) {
 //     }
    
 //   });
+
+
+
+  // cursor
+  // $(document).mousemove(function(e){
+  // o = $('.cursor').offset();
+  // $(".dot").css({
+  // "top": e.pageY - o.top,
+  // "left": e.pageX - o.left
+  // });
+  // });
+
+
+
+
+
+
+
+
+
 });

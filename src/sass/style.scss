@@ -16,12 +16,9 @@
 @import './blocks/loader';
 @import './blocks/title';
 @import './blocks/buttons';
+@import './blocks/scrollbar';
 
 
-
-*::selection{
-    background: #111;
-}
 .wrapper {
     
     font-size: 14px;

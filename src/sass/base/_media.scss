@@ -2,6 +2,12 @@
     ._container {
         max-width: 1000px;
     }
+    .about{
+        &__row{
+            padding-bottom: 50px;
+        }
+    }
+
 }
 @media (max-width: 1200px){
     ._container {
@@ -12,16 +18,15 @@
     ._container {
         max-width: 750px;
     }
+   
     .menu-btn{
         display: block;
     }
     .about{
-        &__row{
-            flex-direction: column;
-        }
-        &__image img{
-            border-radius: 10px 10px 0 0; 
-        }
+      &__text{
+          font-size: 12px;
+      }
+
     }
     .header{
         .menu{
@@ -36,7 +41,7 @@
                position: fixed;
                top: 0;
                left: 0;
-               background: #111;
+               background: $black;
                display: flex;
                justify-content: center;
                align-items: center;
@@ -44,7 +49,7 @@
                 flex-direction: column;
                 transform: translateY(-100%);
                 transition: all .3s ease-in;
-                 
+                 overflow: auto;
 
                 li{
                     margin: 15px 0;
@@ -67,6 +72,11 @@
         }
 
         }   
+        .about{
+            &__row{
+                padding-bottom: 0px;
+            }
+        }
         .header_active-white{
          .menu{
             nav  {
@@ -96,6 +106,27 @@
     ._container {
         max-width: none;
     }
+    .about{
+        &__row{
+            flex-direction: column;
+            
+        }
+        &__image{
+            margin: 0 auto;
+            width: auto; 
+            &::after{
+                display: none;
+            } 
+        }
+        &__image img{
+            border-radius: 50%; 
+            width: 100%;
+        }
+
+    }
+    .title{
+        margin: 0 0 50px 0;
+    }
 }
 
 @media (max-width: 450px){
@@ -108,5 +139,30 @@
             font-size: 13px;
             line-height: 18px;
         }
+    }
+    .about{
+        &__row{
+            background: transparent;
+            border-radius: 0;
+        }
+        &__image{
+            width: 100%;
+            &::after{
+                display: block;
+                margin: 0 auto;
+                bottom: 0;
+                transform: translateX(-50%);
+                border-left: 10px solid transparent;
+                border-bottom: 10px solid $black;
+                border-right: 10px solid transparent;
+                transform: translateX(100%);
+                right: 50%;
+            }
+        }
+        &__image img{
+            border-radius: 10px 10px 0 0; 
+            width: 100%;
+        }
+
     }
 }
