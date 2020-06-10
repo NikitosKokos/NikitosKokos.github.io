@@ -633,8 +633,8 @@ $(".menu-element").on('click', function(e) {
     $('.slider__inner').slick(
       {
       dots: true,
-      prevArrow: '<button type="button" class="slick-prev"><img src="../img/icons/prev.svg" alt="prev"></button>',
-      nextArrow: '<button type="button" class="slick-next"><img src="../img/icons/next.svg" alt="next"></button>',
+      prevArrow: '<button type="button" class="slick-prev"><img src="./img/icons/prev.svg" alt="prev"></button>',
+      nextArrow: '<button type="button" class="slick-next"><img src="./img/icons/next.svg" alt="next"></button>',
       speed: 300,
       slidesToShow: 4,
       slidesToScroll: 4,
