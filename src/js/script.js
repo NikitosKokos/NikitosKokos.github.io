@@ -1,6 +1,6 @@
 @@include('jquery.wavify.js');
 @@include('wavify.js');
-
+@@include('slick.min.js');
 // exports
 $( document ).ready(function() {
 
@@ -355,7 +355,44 @@ $(".menu-element").on('click', function(e) {
   // });
 
 
-
+  // slider
+ 
+    $('.slider__inner').slick(
+      {
+      dots: true,
+      prevArrow: '<button type="button" class="slick-prev"><img src="../img/icons/prev.svg" alt="prev"></button>',
+      nextArrow: '<button type="button" class="slick-next"><img src="../img/icons/next.svg" alt="next"></button>',
+      speed: 300,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            
+            dots: true
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    }
+    );
+ 
 
 
 
