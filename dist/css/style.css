@@ -186,6 +186,10 @@ h6 {
           align-items: center;
 }
 
+.header .menu nav {
+  position: relative;
+}
+
 .header .menu nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -296,6 +300,19 @@ h6 {
   transition: all .4s ease-in;
 }
 
+#marker {
+  position: absolute;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: #fff;
+  bottom: -8px;
+  border-radius: 3px;
+  -webkit-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
+
 .header_active {
   height: 50px;
   -webkit-transition: all .5s ease-in-out;
@@ -339,6 +356,7 @@ h6 {
 
 .header_active-white nav a {
   color: #111;
+  position: relative;
 }
 
 .header_active-white svg path {
@@ -348,6 +366,10 @@ h6 {
 .header_active-white .menu-btn span,
 .header_active-white .menu-btn span::before,
 .header_active-white .menu-btn span::after {
+  background: #111;
+}
+
+.header_active-white #marker {
   background: #111;
 }
 
@@ -794,6 +816,7 @@ h6 {
 
 .questions .block__item {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .questions .block__title {
@@ -823,7 +846,7 @@ h6 {
 
 .questions .block__title.active-title span:before,
 .questions .block__title.active-title span:after {
-  background: red;
+  background: #c70101;
 }
 
 .questions .block__title.active-title span {
@@ -864,6 +887,7 @@ h6 {
 
 .questions .block__text {
   padding-top: 10px;
+  line-height: 1.2em;
   display: none;
   padding: 30px 20px;
   -webkit-box-shadow: inset -2px -2px 8px white, inset -2px -2px 12px rgba(255, 255, 255, 0.5), inset 2px 2px 4px rgba(255, 255, 255, 0.1), inset 2px 2px 8px rgba(0, 0, 0, 0.15);
@@ -1560,6 +1584,10 @@ body {
 }
 
 @media (max-width: 992px) {
+  #marker {
+    display: none;
+  }
+
   ._container {
     max-width: 750px;
   }
@@ -1606,6 +1634,12 @@ body {
     -o-transition: all .3s ease-in;
     transition: all .3s ease-in;
     overflow: auto;
+  }
+
+  .header .menu nav ul .menu-element_active a {
+    color: #c70101;
+    font-weight: 700;
+    border-bottom: 1px solid #c70101;
   }
 
   .header .menu nav ul li {
@@ -1685,6 +1719,10 @@ body {
     font-size: 2em;
   }
 
+  .about__text {
+    font-size: 14px;
+  }
+
   .section-main__title {
     font-size: 25px;
   }
@@ -1705,7 +1743,6 @@ body {
 
   .about__image::after {
     display: block;
-    margin: 0 auto;
     bottom: 0;
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
@@ -1713,9 +1750,9 @@ body {
     border-left: 10px solid transparent;
     border-bottom: 10px solid #111;
     border-right: 10px solid transparent;
-    -webkit-transform: translateX(100%);
-        -ms-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+            transform: translateX(50%);
     right: 50%;
   }
 

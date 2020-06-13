@@ -24,9 +24,10 @@
         display: flex;
         align-items: center;
         
-            
+   
         
         nav {
+            position: relative;
             ul {
                 display: flex;
            
@@ -128,7 +129,16 @@
         transition: all .4s ease-in;
     }
 }
-
+ #marker{
+        position: absolute;
+        left: 0;
+        height: 3px;
+        width: 0;
+        background: $white;
+        bottom: -8px;
+        border-radius: 3px;
+        transition: all .3s ease-in;
+    } 
 .header_active {
     height: 50px;
     transition: all .5s ease-in-out;
@@ -160,6 +170,7 @@
         }
         &__link a{
             color: $black;
+            
          &:hover{
              background: $light-grey;
          }
@@ -170,8 +181,11 @@
         color: $black; 
     }
     nav a {
-    color: $black;
-}   
+        color: $black;
+        position: relative;
+        
+    }   
+    
     svg{
         path{
             fill: $black; 
@@ -186,7 +200,9 @@
   }
     }
 
-    
+    #marker{
+        background: $black;
+    } 
 }
 
 .menu-btn {

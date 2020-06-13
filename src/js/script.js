@@ -1,10 +1,9 @@
+
+// exports
+$( document ).ready(function() {
 @@include('jquery.wavify.js');
 @@include('wavify.js');
 @@include('slick.min.js');
-// exports
-$( document ).ready(function() {
-
-
 // Cache selectors
 var lastId,
     topMenu = $("#top-menu"),
@@ -75,8 +74,30 @@ if(window.innerWidth <= 992){
     speed: 0.25,
   });
 }
+// const nav = responsiveNav(".nav");
+// nav.open();
+const marker = document.querySelector("#marker");
+const items =  document.querySelectorAll('.menu-element');
+const indicator = (e) => {
+      marker.style.left = `${e.offsetLeft}px`;
+      marker.style.width = e.offsetWidth+"px";
+  };
 // header
 $(window).scroll(function (event) {
+  
+  
+    
+    
+    items.forEach(link => {
+
+      if(link.closest('li').classList.contains('menu-element_active')){
+        indicator(link);
+      }
+        link.addEventListener("click", (e) => {
+          indicator(e.target);
+         
+        })
+    })
   let s = $(this).scrollTop();
   let w = $(this).outerWidth();
   let h = $(".wrapper").outerHeight();
@@ -104,21 +125,21 @@ $(window).scroll(function (event) {
   $(".svg-parallax").css("transform", `translateY(${100 - p}%)`);
 });
 
-setInterval(() => {
-  const deg = 6;
-  const hr = document.querySelector("#hr");
-  const mn = document.querySelector("#mn");
-  const sc = document.querySelector("#sc");
+// setInterval(() => {
+//   const deg = 6;
+//   const hr = document.querySelector("#hr");
+//   const mn = document.querySelector("#mn");
+//   const sc = document.querySelector("#sc");
 
-  let day = new Date();
-  let hh = day.getHours() * 30;
-  let mm = day.getMinutes() * deg;
-  let ss = day.getSeconds() * deg;
+//   let day = new Date();
+//   let hh = day.getHours() * 30;
+//   let mm = day.getMinutes() * deg;
+//   let ss = day.getSeconds() * deg;
 
-  hr.style.transform = `rotateZ(${hh + mm / 12}deg)`;
-  mn.style.transform = `rotateZ(${mm}deg)`;
-  sc.style.transform = `rotateZ(${ss}deg)`;
-});
+//   hr.style.transform = `rotateZ(${hh + mm / 12}deg)`;
+//   mn.style.transform = `rotateZ(${mm}deg)`;
+//   sc.style.transform = `rotateZ(${ss}deg)`;
+// });
 
 $('.block__title').click(function(e) {
   if($('.block').hasClass("one")){
@@ -392,11 +413,10 @@ $(".menu-element").on('click', function(e) {
       ]
     }
     );
- 
 
 
 
-
+   
 
 
 });
