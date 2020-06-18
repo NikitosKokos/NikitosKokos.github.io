@@ -93,15 +93,19 @@
             background: rgba($color: $dark-grey, $alpha: 0.4);
         }
     }
+    .img-svg{
+            width: 35px;
+            path{
+                transition: all .3s ease-in;
+            }
+        }
     .telegram:hover{
         border-color: #00aced;
         box-shadow: 0px 0px 35px #00aced;
         color: #00aced;
-        svg{
-            path{
+        
+        .img-svg path{
                fill: #00aced; 
-            }
-            
         }
 
     }

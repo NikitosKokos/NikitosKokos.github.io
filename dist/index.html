@@ -13,13 +13,14 @@
         <link rel="shortcut icon" href="./img/icons/media/github.svg" type="image/x-icon">
 </head>
 
-<body  data-spy="scroll" data-target="#navbar">
+<body  data-spy="scroll" data-target="#navbar" class="hidden">
  
-    <!-- <div class="preloader">
-        <span class="preloader__span1"></span>
-        <span class="preloader__span2"></span>
-        <span class="preloader__span3"></span>
-    </div> -->
+        <div id="preloader" class="preloader">
+            <span class="preloader__span1"></span>
+            <span class="preloader__span2"></span>
+            <span class="preloader__span3"></span>
+            <span class="preloader__span4"></span>
+        </div>
     <div class="wrapper">   
       <!-- header -->
         <header class="header">
@@ -37,7 +38,10 @@
                         <li><a href="#questions" class="menu-element">Частые вопросы</a></li>
                         
                     </ul>
-                    
+                    <svg class="svg-header" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <defs></defs>
+                        <path id="svg-header" d="" />
+                    </svg>
                 </nav>
                 <div class="languages">
                       <ul class="languages__menu">
@@ -69,8 +73,9 @@
 
 
             <section class="about" id="about">
-                <div class="title"><h3>Обо мне</h3></div>
                 <div class="_container">
+                <div class="title"><h3>Обо мне</h3></div>
+                
                  <div class="about__row">
                     <div class="about__image">
                         <img src="./img/me_about.jpg" alt="me">
@@ -92,7 +97,7 @@
                         <div class="about__footer">
                             <a href="#" class="btn btn_dark"><span>Resume</span></a>
 
-                            <a href="#" class="about__link"><img src="./img/icons/media/github.svg" alt="GitHub"></a>
+                            <a href="#" target="_blank" class="about__link"><img class="img-svg" src="./img/icons/media/github.svg" alt="GitHub"></a>
                         </div>
                     </div>
                 </div>                   
@@ -101,12 +106,12 @@
             </section>
                <div class="slider" id="contacts">
                 <ul class="slider__inner">
-                    <li class="slider__item"><a href="#" target="_blank" class="slider__img telegram" ><img src="./img/icons/media/telegram.svg" alt="telegram"></a></li>
-                    <li class="slider__item"><a href="#" target="_blank" class="slider__img instagram"><img src="./img/icons/media/instagram.svg" alt="instagram"></a></li>
-                    <li class="slider__item"><a href="mailto:nikitaodessafreelance@gmail.com" target="_blank" class="slider__img email"><img src="./img/icons/media/mail.svg" alt="email"></a></li>
-                    <li class="slider__item"><a href="#" target="_blank" class="slider__img github"><img src="./img/icons/media/github.svg" alt="github"></a></li>
-                    <li class="slider__item"><a href="#" target="_blank" class="slider__img telegram"><img src="./img/icons/media/telegram.svg" alt="telegram"></a></li>
-                    <li class="slider__item"><a href="#" target="_blank" class="slider__img telegram"><img src="./img/icons/media/telegram.svg" alt="telegram"></a></li>
+                    <li class="slider__item"><a href="#" target="_blank" class="slider__img telegram " ><img class="img-svg" src="./img/icons/media/telegram.svg" alt="telegram"></a></li>
+                    <li class="slider__item"><a href="#" target="_blank" class="slider__img instagram"><img class="img-svg" src="./img/icons/media/instagram.svg" alt="instagram"></a></li>
+                    <li class="slider__item"><a href="mailto:nikitaodessafreelance@gmail.com" target="_blank" class="slider__img email"><img class="img-svg" src="./img/icons/media/mail.svg" alt="email"></a></li>
+                    <li class="slider__item"><a href="#" target="_blank" class="slider__img github"><img class="img-svg" src="./img/icons/media/github.svg" alt="github"></a></li>
+                    <li class="slider__item"><a href="#" target="_blank" class="slider__img telegram"><img class="img-svg" src="./img/icons/media/telegram.svg" alt="telegram"></a></li>
+                    <li class="slider__item"><a href="#" target="_blank" class="slider__img telegram"><img class="img-svg" src="./img/icons/media/telegram.svg" alt="telegram"></a></li>
                 </ul>
             </div>
             <!-- <section class="section-clock" id="portfolio">
@@ -181,10 +186,94 @@
                         </a></li>
                 </ul>
             </section> -->
-            
+            <section id="portfolio" class="portfolio">
+                <div class="_container">
+                   <div class="title title_black"><h3>Портфолио</h3></div> 
+                   <div class="portfolio__row">
+                    <ul class="portfolio__tabs">
+                    <li>All</li>
+                    <li>Web programming</li>
+                    <li>Верстка</li>
+                    <li>Wordpress</li>
+                </ul>
+                <div class="portfolio__content">
+                    <div class="portfolio__item">
+                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
+                        <div class="portfolio__container">
+                            <div class="portfolio__text">
+                            <div class="portfolio__title">RunSmart</div>
+                        <div class="portfolio__category">Верстка</div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                    <div class="portfolio__item">
+                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
+                        <div class="portfolio__container">
+                            <div class="portfolio__text">
+                            <div class="portfolio__title">RunSmart</div>
+                        <div class="portfolio__category">Верстка</div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                    <div class="portfolio__item">
+                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
+                        <div class="portfolio__container">
+                            <div class="portfolio__text">
+                            <div class="portfolio__title">RunSmart</div>
+                        <div class="portfolio__category">Верстка</div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                    <div class="portfolio__item">
+                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
+                        <div class="portfolio__container">
+                            <div class="portfolio__text">
+                            <div class="portfolio__title">RunSmart</div>
+                        <div class="portfolio__category">Верстка</div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                    <div class="portfolio__item">
+                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
+                        <div class="portfolio__container">
+                            <div class="portfolio__text">
+                            <div class="portfolio__title">RunSmart</div>
+                        <div class="portfolio__category">Верстка</div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                    <div class="portfolio__item">
+                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
+                        <div class="portfolio__container">
+                            <div class="portfolio__text">
+                            <div class="portfolio__title">RunSmart</div>
+                        <div class="portfolio__category">Верстка</div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- portfolio__content end -->
+                </div>
+                <!-- portfolio__row end -->
+                   </div>
+                </div>
+                
+                
+            </section>
+            <section id="form" class="form">
+                <div class="title"><h3>Написать</h3></div>
+            </section>
             <section class="questions" id="questions">
+                <div class="_container">
+                <div class="title title_black"><h3>Частые вопросы</h3></div>
                 <div class="block one">
-                    <div class="_container">
+                    
                        <div class="block__row">
                         <div class="block__item">
                             
@@ -212,6 +301,15 @@
                         <div class="block__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae aut hic officia labore 
                             perferendis delectus quaerat laudantium earum dolore unde corporis ex nobis molestiae rem quas, 
                             quam blanditiis? Quibusdam, atque!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae aut hic officia labore 
+                            perferendis delectus quaerat laudantium earum dolore unde corporis ex nobis molestiae rem quas, 
+                            quam blanditiis? Quibusdam, atque!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae aut hic officia labore 
+                            perferendis delectus quaerat laudantium earum dolore unde corporis ex nobis molestiae rem quas, 
+                            quam blanditiis? Quibusdam, atque!</div>
+                    </div>
+                    <div class="block__item">
+                            
+                        <div class="block__title">Сколько стоит сайт? <span></span></div>
+                        <div class="block__text ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae aut hic officia labore 
                             perferendis delectus quaerat laudantium earum dolore unde corporis ex nobis molestiae rem quas, 
                             quam blanditiis? Quibusdam, atque!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae aut hic officia labore 
                             perferendis delectus quaerat laudantium earum dolore unde corporis ex nobis molestiae rem quas, 

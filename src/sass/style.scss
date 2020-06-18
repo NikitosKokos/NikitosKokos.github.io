@@ -39,9 +39,14 @@
         width: 100%;
 
     }
+    .svg-header{
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        
 
+    }
     .svg-parallax {
-        // z-index: 1;
         position: absolute;
         transform: translateY(-100%);
     }

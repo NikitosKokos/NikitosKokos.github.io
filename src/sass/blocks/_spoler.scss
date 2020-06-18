@@ -1,8 +1,10 @@
 .questions{
     width: 100%;
-    padding: 200px 0;
+    padding: 40px 0 100px 0;
     background: #fff;
-   
+   .title{
+            margin: 0 0 40px 0;
+           }
     .block{
         &__row{
             display: flex;
@@ -16,6 +18,7 @@
             margin-bottom: 10px;
 
         }
+        
         &__title{
             font-size: 20px;
             position: relative;
@@ -38,27 +41,21 @@
             }
             &.active-title span{
                 
-                transform: rotate(90deg); 
+                transform: rotate(45deg); 
+                border-right-color: $red;
+                border-bottom-color: $red;
             }
         }
-        &__title span:before,&__title span:after{
-            content: '';
-            width: 10px;
-            height: 1px;
-            display: block;
-            background: #111;
-            transition: all .3s ease;
-            
-        }
-        &__title span:before{ 
-            transform-origin: right;
-            transform: rotate(40deg);
-            
-        }
-        &__title span:after{
-            transform-origin: right;
-            transform: rotate(-40deg);
-            
+        &__title span{
+           width: 10px;
+           height: 10px; 
+           transform: rotate(-45deg);
+           border-bottom: 1px solid $black;
+           border-top: 1px solid transparent;
+           border-right: 1px solid $black;
+           border-left: 1px solid transparent;
+           transition: all .3s ease;
+           
         }
         &__text{
             padding-top: 10px;

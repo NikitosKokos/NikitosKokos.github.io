@@ -2,8 +2,6 @@
     font-weight: 70;
     font-size: 30px;
     color: $white;
-    margin: 0 0 90px 0;
-    padding-top: 100px;
     text-align: center;
     h3{
      position: relative;
@@ -26,6 +24,13 @@
         right: -45px;
     }
     }
-    
+    &_black{
+        color: $black;
+        h3{
+           &::before, &::after{
+               background: $dark-grey;
+           } 
+    }
    
+}
 }

@@ -1,4 +1,14 @@
-
+window.addEventListener("load", () => {
+  const preloader = document.querySelector('#preloader');
+  const bodyPage = document.querySelector('body');
+  setTimeout(() =>{
+    if(!preloader.classList.contains('done')){
+    preloader.classList.add('done');
+    bodyPage.classList.remove('hidden');
+  }
+  }, 800);
+  
+});
 // exports
 $( document ).ready(function() {
 @@include('jquery.wavify.js');
@@ -64,6 +74,13 @@ var myWave = $("#svg").wavify({
   color: "#111",
   speed: 0.25,
 });
+var myWave = $("#svg-header").wavify({
+  height: 50,
+  bones: 5,
+  amplitude: 100,
+  color: "#111",
+  speed: 0.25,
+});
 
 if(window.innerWidth <= 992){
     myWave = $("#svg").wavify({
@@ -80,7 +97,7 @@ const marker = document.querySelector("#marker");
 const items =  document.querySelectorAll('.menu-element');
 const indicator = (e) => {
       marker.style.left = `${e.offsetLeft}px`;
-      marker.style.width = e.offsetWidth+"px";
+      marker.style.width = `${e.offsetWidth}px`;
   };
 // header
 $(window).scroll(function (event) {
@@ -89,15 +106,16 @@ $(window).scroll(function (event) {
     
     
     items.forEach(link => {
-
+        link.addEventListener("click", (e) => {
+          indicator(e.target);
+          
+        });
       if(link.closest('li').classList.contains('menu-element_active')){
         indicator(link);
       }
-        link.addEventListener("click", (e) => {
-          indicator(e.target);
-         
-        })
-    })
+        
+    });
+    
   let s = $(this).scrollTop();
   let w = $(this).outerWidth();
   let h = $(".wrapper").outerHeight();
@@ -167,7 +185,26 @@ $(".menu-element").on('click', function(e) {
 });
 
 
+  // img svg
+  $('img.img-svg').each(function(){
+    let $img = $(this);
+    let imgClass = $img.attr('class');
+    let imgURL = $img.attr('src');
+    $.get(imgURL, function(data) {
+      var $svg = $(data).find('svg');
+      if(typeof imgClass !== 'undefined') {
+        $svg = $svg.attr('class', imgClass+' replaced-svg');
+      }
+      $svg = $svg.removeAttr('xmlns:a');
+      if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+        $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+      }
+      $img.replaceWith($svg);
+    }, 'xml');
+  });
 
+
+  // languages__icon
 
     $('.languages__icon').on("click", function() {
       $('.languages__menu').toggleClass('languages__menu_active');

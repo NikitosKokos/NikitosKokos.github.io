@@ -15,7 +15,14 @@
     }
 }
 @media (max-width: 992px){
-    
+    .title{
+        font-size: 24px;
+    }
+    .portfolio{
+        &__item{
+            flex: 0 0 calc(50% - 15px);
+        }
+    }
     #marker{
         display: none;
     }
@@ -58,7 +65,7 @@
                     .menu-element_active a{
                         color: $red;
                         font-weight: 700;
-                        border-bottom: 1px solid $red;
+                        border-bottom: 2px solid $red;
                     }
                 li{
                     margin: 15px 0;
@@ -119,6 +126,11 @@
         padding: 40px 0 70px 0;
         .slick-dots{
             bottom: -40px;
+        }
+    }
+    .portfolio{
+        &__item{
+            flex: 0 0 100%;
         }
     }
     .about{
