@@ -18,6 +18,14 @@
         font-weight: 700;
         font-size: 24px;
         transition: all .3s ease-in;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            height: 35px;
+            margin-right: 5px;
+
+        }
     }
 
     .menu {

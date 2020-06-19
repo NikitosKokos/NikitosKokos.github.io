@@ -2,17 +2,82 @@
     background: $white;
     padding: 80px 0;
     &__content{
-        display: flex;
+        opacity: 0;
+        visibility: hidden;
+        display: none;
         flex-wrap: wrap;
         justify-content: space-between;
+        transition: all .3s ease-in-out;
+        &_active{
+            opacity: 1;
+            visibility: visible;
+            display: flex;
+        }
+    }
+    &__tabs{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $black;
+        box-shadow: -2px -2px 6px rgba(255 , 255 , 255, 0.1),
+                    2px 2px 6px rgba(0, 0, 0, 0.8);
+        border-radius: 8px;
+        margin-bottom: 30px;
+        overflow: hidden;
+    }
+    &__tab{
+            color: $white;
+            position: relative;
+            padding: 20px 15px;   
+            cursor: pointer; 
+            transition: all .3s ease-in-out;
+            overflow: hidden;
+            z-index: 1;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: $red;
+                bottom: -95%;
+                left: 0;
+                z-index: -1;
+                transition: all .3s ease-in-out;
+            }
+            @media (min-width: 767px){
+                
+               &:hover{
+                &::before{
+                    bottom: 0;
+                    top: auto;
+                }  
+            } 
+            }
+            
+            &_active{
+                background: $red;
+                &::before{
+                    bottom: 0;
+                    top: auto;
+                }  
+                
+            }   
+            &:hover{
+                border-color: $red;
+            }
+            
     }
     &__item{
         flex: 0 0 calc(33% - 15px);
         position: relative;
         overflow: hidden;
-        margin-bottom: 30px;
+        margin: 0 0 30px 0;
         border-radius: 8px;
-        &:hover .portfolio__img img{
+        @media (min-width: 767px){
+           &:hover .portfolio__img img{
             transform: rotate(-30deg) scale(2);
             filter: blur(2px);
         }
@@ -30,6 +95,28 @@
         }
         &:hover .portfolio__title{
             opacity: 1;
+        } 
+        }
+        &_active{
+             .portfolio__img img{
+                transform: rotate(-30deg) scale(2);
+                filter: blur(2px);
+            }
+             .portfolio__container::before{
+                transform: translateX(92%) rotate(45deg) scale(2);
+                opacity: 0.6;
+            }
+             .portfolio__container::after{
+                transform: translateX(-92%) rotate(45deg) scale(2);
+                opacity: 0.6;
+            }
+             .portfolio__category{
+                opacity: 1;
+                transform: translateY(0%);
+            }
+             .portfolio__title{
+                opacity: 1;
+            } 
         }
     }
     &__img{
@@ -96,4 +183,5 @@
        z-index: 1;
 
     }
+
 }
