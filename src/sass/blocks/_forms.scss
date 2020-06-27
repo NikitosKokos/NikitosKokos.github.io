@@ -1,3 +1,175 @@
 .form{
+    padding-bottom: 100px;
     background: $black;
+    &__main{
+        display: flex;
+        flex-direction: column;
+    }
+    &__item{
+      flex: 0 0 calc(50% - 15px); 
+      position: relative;
+      &_email{
+          input{
+              padding: 15px 20px 15px 40px; 
+          }  
+          span{
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 10px;
+                    background: url('../img/icons/media/mail.svg') center (center / cover) no-repeat;
+                    width: 20px;
+                    height: 20px;
+                    transform: translateY(-50%);  
+        }
+    }
+    &_tel{
+        input{
+            padding: 15px 20px 15px 40px; 
+        }  
+        span{
+                  content: '';
+                  position: absolute;
+                  top: 50%;
+                  left: 10px;
+                  background: url('../img/icons/media/telegram.svg') center (center / cover) no-repeat;
+                  width: 20px;
+                  height: 20px;
+                  transform: translateY(-50%);  
+      }
+  }
+  &_message{
+    textarea{
+        padding: 15px 20px 15px 40px; 
+    }  
+    span{
+              content: '';
+              position: absolute;
+              top: 23px;
+              left: 10px;
+              background: url('../img/icons/envelope.svg') center (center / cover) no-repeat;
+              width: 20px;
+              height: 20px;
+              transform: translateY(-50%);  
+  }
 }
+    }
+    &__inputs{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    &__input{
+        width: 100%;
+        display: inline-block;
+        background: transparent;
+        border-radius: 6px;
+        border: 1px solid $white;
+        color: $light-grey;
+        
+        transition: all .3s ease-in-out;
+        padding: 15px 20px;
+      &::placeholder{
+        color: $dark-grey;
+      }
+    }
+    
+    &__textarea{
+        height: 300px;
+        margin-bottom: 30px;
+        resize: none;
+    }
+    &__buttons{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__btn{
+        overflow: hidden;
+        position: relative;
+        color: $white;
+        text-transform: uppercase;
+        border: 1px solid $white;
+        padding: 10px 40px;
+        background: #009900;
+        border-radius: 100px;
+        transition: all .5s ease-in-out;
+        &:active{
+            border-color: $white;
+        }
+      &::before{
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 20px;
+          background: url('../img/icons/check.svg') center (center / cover) no-repeat;
+          width: 20px;
+          height: 20px;
+          transform: translateX(-40px) translateY(-50%);
+          transition: all .5s ease-in-out;
+      }
+      &:hover{
+            border-color: #009900;
+            padding: 10px 30px 10px 50px;
+            &::before{
+                transform: translateX(0) translateY(-50%);
+            }
+      }
+      &:disabled{
+        cursor: not-allowed;
+        background: transparent;
+        color: $light-grey;
+        border-color: $light-grey;
+        &:hover{
+            padding: 10px 40px;
+            &::before{
+                transform: translateX(-40px) translateY(-50%);
+            }
+      }
+      }
+    }
+    &__btn-close{
+        border-radius: 50%;
+        background: transparent;
+        padding: 10px;
+        transition: all .3s ease-in-out;
+        border: 1px solid $white;
+        background: $red;
+        img{
+            width: 20px;
+            height: 20px;
+            transition: all .5s ease-in-out;
+        }
+        &:hover{
+            border-color: $red;
+            img{
+                transform: rotate(360deg); 
+            }
+        }
+        &:active{
+            border-color: $white;
+        }
+        &:disabled{
+            cursor: not-allowed;
+            background: transparent;
+            border-color: $light-grey;
+            &:hover{
+                
+                img{
+                    transform: rotate(0deg); 
+                }
+            }
+        }
+        
+    }
+    // .moon{
+    //     width: 50px;
+    //     height: 50px;
+    //     background: transparent;
+    //     border-radius: 50%;
+    //     box-shadow: inset  10px 10px 0px 0px $white;
+    //     transform: rotate(-75deg);
+    // }
+}
+

@@ -14,6 +14,44 @@ $( document ).ready(function() {
 @@include('jquery.wavify.js');
 @@include('wavify.js');
 @@include('slick.min.js');
+function testWebP(callback) {
+// webp
+  var webP = new Image();
+  webP.onload = webP.onerror = function () {
+  callback(webP.height == 2);
+  };
+  webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+  }
+  
+  testWebP(function (support) {
+  
+  if (support == true) {
+  document.querySelector('body').classList.add('webp');
+  }else{
+  document.querySelector('body').classList.add('no-webp');
+  }
+  });
+// fonts
+  function fontsStyle(params) {
+
+    let file_content = fs.readFileSync(source_folder + '/scss/base/_fonts.scss');
+    if (file_content == '') {
+    fs.writeFile(source_folder + '/scss/base/_fonts.scss', '', cb);
+    return fs.readdir(path.build.fonts, function (err, items) {
+    if (items) {
+    let c_fontname;
+    for (var i = 0; i < items.length; i++) {
+    let fontname = items[i].split('.');
+    fontname = fontname[0];
+    if (c_fontname != fontname) {
+    fs.appendFile(source_folder + '/scss/base/_fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
+    }
+    c_fontname = fontname;
+    }
+    }
+    })
+    }
+    }
 // Cache selectors
 var lastId,
     topMenu = $("#top-menu"),
@@ -464,5 +502,35 @@ $('.portfolio__item').on('click', function() {
   .addClass('portfolio__item_active').siblings().removeClass('portfolio__item_active');
 });
 // tabs end
+
+  //  form
+    const inputs = document.querySelectorAll('.form__input');
+    const formBtn = document.querySelector('.form__btn');
+    const formBtnClose = document.querySelector('.form__btn-close');
+
+    const check = () => {
+      if(inputs[0].value != '' || inputs[1].value != '' || inputs[2].value != ''){
+        formBtn.disabled = false;
+        formBtnClose.disabled = false;
+      }else{
+        formBtn.disabled = true;
+        formBtnClose.disabled = true;
+      }
+
+    };
+
+    const formReset = () => {
+      setTimeout(function()  {
+         formBtn.disabled = true;
+        formBtnClose.disabled = true;
+      }, 300);
+       
+    };
+    formBtnClose.addEventListener('click', formReset);
+    inputs[0].addEventListener('keyup', check);
+    inputs[1].addEventListener('keyup', check);
+    inputs[2].addEventListener('keyup', check);
+    
+    //  form end
 
 });

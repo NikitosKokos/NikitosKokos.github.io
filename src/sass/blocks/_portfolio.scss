@@ -1,6 +1,6 @@
 .portfolio{
     background: $white;
-    padding: 80px 0;
+    padding: 0 0 80px 0;
     &__content{
         opacity: 0;
         visibility: hidden;
@@ -8,10 +8,12 @@
         flex-wrap: wrap;
         justify-content: space-between;
         transition: all .3s ease-in-out;
-        &_active{
-            opacity: 1;
-            visibility: visible;
+        &_active{ 
             display: flex;
+            visibility: visible;
+            opacity: 1;
+            
+           
         }
     }
     &__tabs{
@@ -96,7 +98,21 @@
         &:hover .portfolio__title{
             opacity: 1;
         } 
+        &:hover .portfolio__links{
+            opacity: 1;
+            visibility: visible;
+            .portfolio__link{
+                &:first-child{
+                transform: translateX(0%);
+                }
+                &:last-child{
+                    transform: translateX(0%);
+                }
+            }
+            
         }
+        }
+        @media (max-width: 767px){
         &_active{
              .portfolio__img img{
                 transform: rotate(-30deg) scale(2);
@@ -117,7 +133,21 @@
              .portfolio__title{
                 opacity: 1;
             } 
+            .portfolio__links{
+                opacity: 1;
+                visibility: visible;
+                .portfolio__link{
+                    &:first-child{
+                    transform: translateX(0%);
+                    }
+                    &:last-child{
+                        transform: translateX(0%);
+                    }
+                }
+            }
         }
+        } 
+
     }
     &__img{
         width: 100%;
@@ -149,6 +179,7 @@
         width: 100%;
         height: 100%;
         position: absolute;
+
         top: 0;
         left: 0;
         &::before{
@@ -183,5 +214,26 @@
        z-index: 1;
 
     }
-
+    &__links{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease-in-out;
+    }
+    &__link{
+        margin: 10px 15px 0 15px;
+        transition: all .3s ease-in-out;
+        img{
+            width: 30px;
+            height: 30px;
+        }
+        &:first-child{
+            transform: translateX(-100%);
+        }
+        &:last-child{
+            transform: translateX(100%);
+        }
+    }
 }
