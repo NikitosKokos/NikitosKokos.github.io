@@ -326,7 +326,7 @@ function testWebP(callback) {
     }
     }
 // Cache selectors
-var lastId,
+let lastId,
     topMenu = $("#top-menu"),
     topMenuHeight = topMenu.outerHeight()+15,
     // All list items
@@ -340,7 +340,7 @@ var lastId,
 // Bind click handler to menu items
 // so we can get a fancy scroll animation
 menuItems.click(function(e){
-  var href = $(this).attr("href"),
+  let href = $(this).attr("href"),
       offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
   $('html, body').stop().animate({ 
       scrollTop: offsetTop
@@ -351,16 +351,16 @@ menuItems.click(function(e){
 // Bind to scroll
 $(window).scroll(function(){
    // Get container scroll position
-   var fromTop = $(this).scrollTop()+topMenuHeight;
+   let fromTop = $(this).scrollTop()+topMenuHeight;
    
      // Get id of current scroll item
-     var cur = scrollItems.map(function(){
+     let cur = scrollItems.map(function(){
        if ($(this).offset().top < fromTop)
          return this;
      });
      // Get the id of the current element
      cur = cur[cur.length-1];
-     var id = cur && cur.length ? cur[0].id : "";
+     let id = cur && cur.length ? cur[0].id : "";
 
      if (lastId !== id) {
          lastId = id;
@@ -370,14 +370,7 @@ $(window).scroll(function(){
            .end().filter("[href='#"+id+"']").parent().addClass("menu-element_active");
      }                   
   });
-  // Wave
-// var myWave = $("#myID").wavify({
-//   height: 550,
-//   bones: 6,
-//   amplitude: 80,
-//   color: "#62a6ff",
-//   speed: 0.25,
-// });
+
 var myWave = $("#svg").wavify({
   height: 50,
   bones: 5,
@@ -385,13 +378,14 @@ var myWave = $("#svg").wavify({
   color: "#111",
   speed: 0.25,
 });
-var myWave = $("#svg-header").wavify({
+var myWave = $("#svgFooter").wavify({
   height: 50,
   bones: 5,
-  amplitude: 100,
+  amplitude: 50,
   color: "#111",
   speed: 0.25,
 });
+
 
 if(window.innerWidth <= 992){
     myWave = $("#svg").wavify({
@@ -410,6 +404,14 @@ const indicator = (e) => {
       marker.style.left = `${e.offsetLeft}px`;
       marker.style.width = `${e.offsetWidth}px`;
   };
+  items.forEach(link => {
+    link.addEventListener("click", (e) => {
+      indicator(e.target);
+
+    });
+  
+    
+});
 // header
 $(window).scroll(function (event) {
   
@@ -417,10 +419,9 @@ $(window).scroll(function (event) {
     
     
     items.forEach(link => {
-        link.addEventListener("click", (e) => {
-          indicator(e.target);
-          
-        });
+        // link.addEventListener("click", (e) => {
+        //   indicator(e.target);
+        // });
       if(link.closest('li').classList.contains('menu-element_active')){
         indicator(link);
       }
@@ -686,7 +687,6 @@ $(".menu-element").on('click', function(e) {
         onDestroy: (self) => {}
       });
         
-      $("#typing-header").typed();
   });
 
 // let active = 0;
@@ -780,30 +780,114 @@ $('.portfolio__item').on('click', function() {
     const inputs = document.querySelectorAll('.form__input');
     const formBtn = document.querySelector('.form__btn');
     const formBtnClose = document.querySelector('.form__btn-close');
-
-    const check = () => {
-      if(inputs[0].value != '' || inputs[1].value != '' || inputs[2].value != ''){
-        formBtn.disabled = false;
-        formBtnClose.disabled = false;
-      }else{
+ inputs.forEach((element) => {
+  element.addEventListener('keyup', () => {
+    if(element.value != ''){
+      if(element['required'] != undefined && element['required'].value == ''){
         formBtn.disabled = true;
-        formBtnClose.disabled = true;
+      }else{
+        formBtn.disabled = false;
       }
+      formBtnClose.disabled = false;
+    }else{
+      formBtn.disabled = true;
+      formBtnClose.disabled = true;
+    }
+    
+  });
+  
+    });
+    // const check = () => {
+     
+    //   if(inputs[0].value != '' || inputs[1].value != '' || inputs[2].value != ''){
+    //     if($('.form__input[required]')[0].value == ''){
+    //       formBtn.disabled = true;
+    //     }else{
+    //       formBtn.disabled = false;
+    //     }
+    //     formBtnClose.disabled = false;
+    //   }else{
+    //     formBtn.disabled = true;
+    //     formBtnClose.disabled = true;
+    //   }
 
-    };
+    // };
 
     const formReset = () => {
       setTimeout(function()  {
-         formBtn.disabled = true;
+        formBtn.disabled = true;
         formBtnClose.disabled = true;
       }, 300);
        
     };
     formBtnClose.addEventListener('click', formReset);
-    inputs[0].addEventListener('keyup', check);
-    inputs[1].addEventListener('keyup', check);
-    inputs[2].addEventListener('keyup', check);
+    // inputs[0].addEventListener('keyup', check);
+    // inputs[1].addEventListener('keyup', check);
+    // inputs[2].addEventListener('keyup', check);
+    
     
     //  form end
+
+
+
+    // Date
+    
+/*
+// Берём элемент для вывода таймера
+let timer_show = document.querySelector("#webYear");
+ 
+// Функция для вычисления разности времени
+function diffSubtract(date1, date2) {
+    return date2 - date1;
+}
+ 
+// Массив данных о времени
+let end_date = {
+    "full_year": "2019", // Год
+    "month": "04", // Номер месяца
+    "day": "01", // День
+    "hours": "00", // Час
+    "minutes": "00", // Минуты
+    "seconds": "00" // Секунды
+}
+ 
+// Строка для вывода времени
+let end_date_str = `${end_date.full_year}-${end_date.month}-${end_date.day}T${end_date.hours}:${end_date.minutes}:${end_date.seconds}`;
+
+// Запуск интервала таймера
+timer = setInterval(function () {
+    // Получение времени сейчас
+    let now = new Date();
+    // Получение заданного времени
+    let date = new Date(end_date_str);
+    // Вычисление разницы времени 
+    let ms_left = diffSubtract(now, date);
+    // Если разница времени меньше или равна нулю 
+    if (ms_left <= 0) {
+      let res = new Date(ms_left);
+      // Делаем строку для вывода
+      monthEnd = end_date.month;
+      monthNow = now.getMonth();
+      let str_timer = `${now.getFullYear() - 2019} year(s) ${diffSubtract( monthEnd, monthNow)} month`;
+      timer_show.innerHTML = str_timer;
+    } 
+}, 1000)
+    // Date end
+
+*/
+// находим в теле HTML контейнер, куда будем выводить результат
+let res = document.querySelector("#webYear");
+
+// объявляем наши даты
+let current = new Date(); // сегодня
+let old = new Date("04-01-2019"); // !!! месяц-день-год !!!
+
+// сначала находим количество дней между датами
+let days = Math.ceil(Math.abs(old.getTime() - current.getTime()) / (1000 * 3600 * 24));
+let year = Math.floor(days / 365); // вычисляем кол-во лет. Math.floor убирает остаток.
+let month = Math.floor((days - (year * 365)) / 30); // отняв года, вычисляем месяцы
+
+// осталось вывести полученную информацию в контейнер:
+res.innerHTML = `${year} year(s) ${month} month`;
 
 });

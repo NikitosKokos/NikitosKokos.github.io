@@ -19,8 +19,8 @@
         font-size: 24px;
     }
     .portfolio{
-        &__item{
-            flex: 0 0 calc(50% - 15px);
+        &__content{
+            grid-template-columns: repeat(2, 1fr);
         }
     }
     #marker{
@@ -61,7 +61,6 @@
                 transform: translateY(-100%);
                 transition: all .3s ease-in;
                  overflow: auto;
-                // el active
                     .menu-element_active a{
                         color: $red;
                         font-weight: 700;
@@ -129,8 +128,8 @@
         }
     }
     .portfolio{
-        &__item{
-            flex: 0 0 100%;
+        &__content{
+            grid-template-columns: 1fr;
         }
     }
     .about{

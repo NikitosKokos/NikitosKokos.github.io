@@ -5,7 +5,7 @@
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 2px;
-    color: #5a84a2;
+    color: $red;
     font-size: 18px;
     border-radius: 40px;
     box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
@@ -29,7 +29,7 @@
         box-shadow: -2px -2px 6px rgba(255 , 255 , 255, 0.1),
                     2px 2px 6px rgba(0, 0, 0, 0.8);
                     &:hover{
-                        color: #006c9c;
+                        color: $red;
                         box-shadow: inset -2px -2px 6px rgba(255 , 255 , 255, 0.1),
                         inset 2px 2px 6px rgba(0, 0, 0, 0.8);
                     }
