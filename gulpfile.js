@@ -1,7 +1,7 @@
 const project_folder = "dist";
 const source_folder = "src";
 
-let fs =require('fs');
+let fs = require('fs');
 
 let path= {
     build:{
@@ -45,7 +45,8 @@ let {src,dest } = require('gulp'),
     svgSprite = require('gulp-svg-sprite'),
     ttf2woff = require('gulp-ttf2woff'),
     ttf2woff2 = require('gulp-ttf2woff2'),
-    fonter = require('gulp-fonter');
+    fonter = require('gulp-fonter'),
+    htmlmin = require('gulp-htmlmin');
 
 function browserSync() {
     browsersync.init({
@@ -63,6 +64,7 @@ function html(){
     return src(path.src.html)
         .pipe(fileinclude())
         .pipe(webphtml())
+        .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(dest(path.build.html))
         .pipe(browsersync.stream());
 }

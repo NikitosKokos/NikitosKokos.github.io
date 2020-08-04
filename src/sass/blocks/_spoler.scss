@@ -37,10 +37,10 @@
 
             }
             &.active-title span{
-                
-                transform: rotate(45deg); 
                 border-right-color: $red;
                 border-bottom-color: $red;
+                transform: rotate(45deg); 
+                
             }
         }
         &__title span{

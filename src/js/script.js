@@ -14,6 +14,7 @@ $( document ).ready(function() {
 @@include('jquery.wavify.js');
 @@include('wavify.js');
 @@include('slick.min.js');
+
 function testWebP(callback) {
 // webp
   var webP = new Image();
@@ -105,7 +106,7 @@ var myWave = $("#svg").wavify({
   color: "#111",
   speed: 0.25,
 });
-var myWave = $("#svgFooter").wavify({
+var myWave2 = $("#svgFooter").wavify({
   height: 50,
   bones: 5,
   amplitude: 50,
@@ -115,10 +116,17 @@ var myWave = $("#svgFooter").wavify({
 
 
 if(window.innerWidth <= 992){
-    myWave = $("#svg").wavify({
+    myWave  = $("#svg").wavify({
     height: 50,
     bones: 5,
-    amplitude: 50,
+    amplitude: 30,
+    color: "#111",
+    speed: 0.25,
+  });
+  myWave  = $("#svgFooter").wavify({
+    height: 50,
+    bones: 5,
+    amplitude: 30,
     color: "#111",
     speed: 0.25,
   });
@@ -182,20 +190,27 @@ $(window).scroll(function (event) {
   $(".svg-parallax").css("transform", `translateY(${100 - p}%)`);
 });
 
-// setInterval(() => {
-//   const deg = 6;
-//   const hr = document.querySelector("#hr");
-//   const mn = document.querySelector("#mn");
-//   const sc = document.querySelector("#sc");
+// spoiler
 
-//   let day = new Date();
-//   let hh = day.getHours() * 30;
-//   let mm = day.getMinutes() * deg;
-//   let ss = day.getSeconds() * deg;
-
-//   hr.style.transform = `rotateZ(${hh + mm / 12}deg)`;
-//   mn.style.transform = `rotateZ(${mm}deg)`;
-//   sc.style.transform = `rotateZ(${ss}deg)`;
+if(window.innerWidth <= 992){
+  $('.footer__title').click(function(e) {
+  if($('.footer').hasClass("one")){
+    $(".footer__title").not($(this)).removeClass("footer__title_active");
+    $(".block__text").not($(this).next()).slideUp(300);
+  }
+  $(this).toggleClass("footer__title_active").next().slideToggle(300);
+});
+}
+// $(window).resize(function () {
+//   if($(window).innerWidth <= 992){
+//   $('.footer__title').click(function(e) {
+//   if($('.footer').hasClass("one")){
+//     $(".footer__title").not($(this)).removeClass("footer__title_active");
+//     $(".block__text").not($(this).next()).slideUp(300);
+//   }
+//   $(this).toggleClass("footer__title_active").next().slideToggle(300);
+// });
+// }
 // });
 
 $('.block__title').click(function(e) {
@@ -205,6 +220,7 @@ $('.block__title').click(function(e) {
   }
   $(this).toggleClass("active-title").next().slideToggle(300);
 });
+// spoiler end
 
 // menu
 $('.menu-btn').on('click', function(e) {
@@ -416,32 +432,37 @@ $(".menu-element").on('click', function(e) {
         
   });
 
-// let active = 0;
-// const menuEl = document.querySelectorAll(".menu-element");
-// const menuline = document.querySelectorAll(".menu-line");
-//   this.addEventListener("click", () => {
-//     menuEl[active].classList.remove("menu-element_active");
-    
-//     if(active + 1 == menuEl.length){
-//       // menuline[active].classList.remove('menu-line_active');
-//       active = 0;
-//     }else{
-//        active++;
-        
-//     }
-//      menuEl[active].classList.add("menu-element_active");
-//     if(active-1 < 0){
-//       menuline[0].classList.remove('menu-line_active');
-//     }else{
-//       menuline[active].classList.remove('menu-line_active');
-//       menuline[active-1].classList.add('menu-line_active');
-//     }
+
+// cursor
+/*
+  $( "body" ).mousemove(function( event ) {
+    var  x, y, z;
    
-//   });
-
-
-
-  // cursor
+     x = event.clientX;
+     y = event.clientY;
+     z = event.clientZ;
+    
+   $( ".js-cursor" ).css( 'left', function( ) {
+       x =  event.pageX-10;
+     return x;
+   });
+   $( ".js-cursor" ).css( 'top', function() {
+      y =  event.pageY-10;
+     return y;
+   }); 
+   $('a').on('mouseover', function() {
+    // $('.cursor').css({'width':'40px', 'height':'40px'});
+    $('.cursor').css({'transform':'scale(2.2)','opacity': '.6'});
+   });
+   
+   $('a').on('mouseout', function() {
+    // $('.cursor').css({'width':'30px', 'height':'30px'});
+    $('.cursor').css({'transform':'scale(1)','opacity': '.8'});
+   });
+   });
+*/
+  // cursor end
+  
   // $(document).mousemove(function(e){
   // o = $('.cursor').offset();
   // $(".dot").css({
@@ -524,33 +545,18 @@ $('.portfolio__item').on('click', function() {
   });
   
     });
-    // const check = () => {
-     
-    //   if(inputs[0].value != '' || inputs[1].value != '' || inputs[2].value != ''){
-    //     if($('.form__input[required]')[0].value == ''){
-    //       formBtn.disabled = true;
-    //     }else{
-    //       formBtn.disabled = false;
-    //     }
-    //     formBtnClose.disabled = false;
-    //   }else{
-    //     formBtn.disabled = true;
-    //     formBtnClose.disabled = true;
-    //   }
 
-    // };
 
     const formReset = () => {
       setTimeout(function()  {
+        document.querySelector('.form__main').reset(); // reset form
         formBtn.disabled = true;
         formBtnClose.disabled = true;
       }, 300);
        
     };
     formBtnClose.addEventListener('click', formReset);
-    // inputs[0].addEventListener('keyup', check);
-    // inputs[1].addEventListener('keyup', check);
-    // inputs[2].addEventListener('keyup', check);
+
     
     
     //  form end
@@ -558,63 +564,41 @@ $('.portfolio__item').on('click', function() {
 
 
     // Date
-    
-/*
-// Берём элемент для вывода таймера
-let timer_show = document.querySelector("#webYear");
- 
-// Функция для вычисления разности времени
-function diffSubtract(date1, date2) {
-    return date2 - date1;
-}
- 
-// Массив данных о времени
-let end_date = {
-    "full_year": "2019", // Год
-    "month": "04", // Номер месяца
-    "day": "01", // День
-    "hours": "00", // Час
-    "minutes": "00", // Минуты
-    "seconds": "00" // Секунды
-}
- 
-// Строка для вывода времени
-let end_date_str = `${end_date.full_year}-${end_date.month}-${end_date.day}T${end_date.hours}:${end_date.minutes}:${end_date.seconds}`;
 
-// Запуск интервала таймера
-timer = setInterval(function () {
-    // Получение времени сейчас
-    let now = new Date();
-    // Получение заданного времени
-    let date = new Date(end_date_str);
-    // Вычисление разницы времени 
-    let ms_left = diffSubtract(now, date);
-    // Если разница времени меньше или равна нулю 
-    if (ms_left <= 0) {
-      let res = new Date(ms_left);
-      // Делаем строку для вывода
-      monthEnd = end_date.month;
-      monthNow = now.getMonth();
-      let str_timer = `${now.getFullYear() - 2019} year(s) ${diffSubtract( monthEnd, monthNow)} month`;
-      timer_show.innerHTML = str_timer;
-    } 
-}, 1000)
-    // Date end
-
-*/
-// находим в теле HTML контейнер, куда будем выводить результат
 let res = document.querySelector("#webYear");
-
-// объявляем наши даты
-let current = new Date(); // сегодня
+let current = new Date(); 
 let old = new Date("04-01-2019"); // !!! месяц-день-год !!!
 
-// сначала находим количество дней между датами
-let days = Math.ceil(Math.abs(old.getTime() - current.getTime()) / (1000 * 3600 * 24));
-let year = Math.floor(days / 365); // вычисляем кол-во лет. Math.floor убирает остаток.
-let month = Math.floor((days - (year * 365)) / 30); // отняв года, вычисляем месяцы
 
-// осталось вывести полученную информацию в контейнер:
+let days = Math.ceil(Math.abs(old.getTime() - current.getTime()) / (1000 * 3600 * 24));
+let year = Math.floor(days / 365); 
+let month = Math.floor((days - (year * 365)) / 30); 
+
+
 res.innerHTML = `${year} year(s) ${month} month`;
+ // Date end
+
+//  scroll top
+$(window).scroll(function() {scrollFunction()});
+
+function scrollFunction() {
+  if ($(document).height() - $(window).height() - $(window).scrollTop() <= 50 ) {
+    $('#scrollTop').addClass('scrollTop_active');
+  } 
+  // Will not hide
+  // else {
+  //   $('#scrollTop').removeClass('scrollTop_active');
+  // }
+}
+
+
+$('#scrollTop').on('click',(e) => {
+  e.preventDefault();
+  $('html, body').stop().animate({ 
+    scrollTop: 0
+}, 1000);
+}) 
+//  scroll top end
+
 
 });

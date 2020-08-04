@@ -52,6 +52,29 @@ body{
 
 
 // cursor
+/*
+@media(min-width: 1024px){
+    .cursor {
+    width: 25px;
+    height: 25px;
+    position: fixed;
+    background:#c70101;
+    opacity: .8;
+    border-radius: 50%;
+    top: 50px;
+    left: 50px;
+    z-index: 1000;
+    pointer-events: none;
+    transition: transform .3s ease, opacity .3s ease;
+  }
 
-// body {cursor: url('../../img/icons/cursor.svg'), auto}
+a:hover{
+    cursor: none;
+}
+body {cursor: none}
+*,*:hover {
+    cursor:none;
+}
+}
 
+*/
