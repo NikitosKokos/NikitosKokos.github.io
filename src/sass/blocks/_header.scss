@@ -1,7 +1,8 @@
 .header {
     position: fixed;
     width: 100%;
-    background: $black;
+    // background: $black;
+    background: transparent;
     top: 0;
     height: 80px;
     color: white;
@@ -13,7 +14,9 @@
     a {
         color: $white;
     }
-    
+    &__logo{
+        z-index: 5;
+    }
     &__logo a{
         font-weight: 700;
         font-size: 24px;
@@ -21,6 +24,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        
         span:first-letter{
             color: $red;
         }
@@ -88,6 +92,7 @@
         
 
         .languages {
+            z-index: 5;
            &__icon{
                cursor: pointer;
                width: 25px;
@@ -111,7 +116,7 @@
            }
 
            &__link a{
-               position: relative;
+            position: relative;
             display: block;
             padding: 20px;
             padding-left: 50px;
@@ -153,6 +158,7 @@
 .header_active {
     height: 50px;
     transition: all .5s ease-in-out;
+    background: $black;
 
     .header__row {
         height: 50px;
@@ -166,6 +172,8 @@
             }
 
         }
+        
+        
     }
 }
 
