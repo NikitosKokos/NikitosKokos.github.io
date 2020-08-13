@@ -886,5 +886,10 @@ function ibg(){
   
   ibg();
   // ibg end
+const createMessage = () => {
+  $('.message').addClass('message_active');
+};
+
+  setTimeout(createMessage, 10000);
 
 });
