@@ -1,0 +1,160 @@
+.popup{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: $white;
+    top: 0;
+    left: 0;
+    // opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    z-index: 980;
+    transition: all .3s ease-in-out;
+    &__container{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    &__body{
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+    &__img {
+        margin: 0px 0px 30px 0px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__title{
+        color: $black;
+        font-weight: 500;
+        font-size: 24px;
+        margin: 0px 0px 10px 0px;
+    }
+    &__descr{
+        color: $dark-grey;
+        line-height: 18px;
+        margin: 0px 0px 10px 0px;
+    }
+    &__demo{
+        color: $white;
+        padding: 10px 30px;
+        background: $red;
+        transition: all .3s ease-in-out;
+        border: 2px solid $red;
+        margin: 0px 20px 0px 0px;
+        @media(min-width: 767px){
+            &:hover{
+            background: transparent;
+            color: $red;
+            }
+        }
+    
+    }
+    &__github{
+        color: $red;
+        padding: 10px 30px;
+        background: transparent;
+        border: 2px solid $red;
+        transition: all .3s ease-in-out;
+        @media(min-width: 767px){
+            &:hover{
+            background: $red;
+            color: $white;
+            }
+        }
+      
+    }
+    &__links{
+        margin: 0px 0px 30px 0px;
+    }
+    &__category{
+        margin: 0px 0px 30px 0px;
+        a{
+            position: relative;
+            color: $red;
+            transition: all .3s ease-in;
+            padding-bottom: 1px;
+            &:before{
+                content: '';
+                position: absolute;
+                height: 1px;
+                width: 100%;
+                background: $red;
+                bottom: 0px;
+                left: 0;
+                opacity: 1;
+                transition: all .3s ease-in;
+            }
+            margin: 0px 10px 0px 0px;
+            &:last-child{
+                margin: 0px 0px 0px 0px;
+            }
+            @media(min-width: 767px){
+                
+          
+            &:hover{
+                color: $red;
+                &:before{
+                opacity: 0;
+                bottom: -3px;
+            }
+            }
+              
+        }
+        }
+    }
+    &__close{
+        position: absolute;
+        top: 0;
+        right: 30px;
+        background: $red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 25px 20px;
+        cursor: pointer;
+        z-index: 981;
+        transform: translateY(0%); 
+        &_hide{
+            transform: translateY(-75%); 
+        }
+        transition: all .3s ease-in-out;
+       
+        span{
+            position: relative;
+            width: 25px;
+            height: 25px;
+            display: block;
+            &::before,
+            &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            // transform: translate(-50%, -50%);
+            width: 20px;
+            height: 2px;
+            background-color: $white;
+            
+            }
+            &:before {
+                transform:translate(-50%, -50%) rotate(-45deg) ;
+                transform-origin: center;
+              }
+            &:after {
+                transform:translate(-50%, -50%) rotate(45deg) ;
+                transform-origin: center;
+            }
+        }
+        
+    }
+    &_active{
+        transform: translateY(0%); 
+        // opacity: 1;
+        visibility: visible;
+        transition: all .3s ease-in-out;
+    }
+}

@@ -1,23 +1,23 @@
 .slider{
     padding: 60px 0 110px 0;
-    background:$black;
+    background: $black;
     
     &__inner{
         position: relative;
-        
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
     }
     &__item{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
         padding: 80px 0;
-        
     }
     &__img{
         width: 80px;
         height: 80px;
         margin: 0 auto;
-        display: inline-block;
         border-radius: 50%;
         border: 5px solid $white;
         display: flex;

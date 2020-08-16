@@ -35,7 +35,6 @@
             z-index: 1;
             white-space: nowrap;
             text-overflow: ellipsis;
-            overflow: hidden;
             &::before{
                 content: '';
                 position: absolute;
@@ -75,18 +74,16 @@
         position: relative;
         overflow: hidden;
         border-radius: 8px;
+        cursor: pointer;
         @media (min-width: 992px){
            &:hover .portfolio__img img{
-            transform: rotate(-30deg) scale(2);
+            // transform: rotate(-30deg) scale(2);
             filter: blur(2px);
         }
-        &:hover .portfolio__container::before{
-            transform: translateX(92%) rotate(45deg) scale(2);
-            opacity: 0.6;
-        }
         &:hover .portfolio__container::after{
-            transform: translateX(-92%) rotate(45deg) scale(2);
-            opacity: 0.6;
+            // transform: translateX(-92%) rotate(45deg) scale(2);
+            transform: translateY(0%);
+            opacity: 0.3;
         }
         &:hover .portfolio__category{
             opacity: 1;
@@ -112,12 +109,8 @@
         @media (max-width: 767px){
         &_active{
              .portfolio__img img{
-                transform: rotate(-30deg) scale(2);
+                // transform: rotate(-30deg) scale(2);
                 filter: blur(2px);
-            }
-             .portfolio__container::before{
-                transform: translateX(92%) rotate(45deg) scale(2);
-                opacity: 0.6;
             }
              .portfolio__container::after{
                 transform: translateX(-92%) rotate(45deg) scale(2);
@@ -197,23 +190,22 @@
 
         top: 0;
         left: 0;
-        &::before{
-            left: 0;
-            transform: translateX(-125%) rotate(45deg);
-            
-        }
-        &::after{
-            right: 0;
-            transform: translateX(125%) rotate(45deg);
-        }
+
+        // &::after{
+        //     right: 0;
+        //     transform:translateY(-50%) translateX(85%) rotate(45deg);
+        // }
     }
-    &__container::before, &__container::after{
+     &__container::after{
         content: '';
-        width: 200px;
-        height: 200px;
+        width: 100%;
+        height: 100%;
         position: absolute;
         top: 0;
-        opacity: 0.1;
+        left: 0;
+        transform: translateY(100%);
+        opacity: .6;
+        border: 20px solid transparent;
         background: $red;
         transition: all .3s ease-in-out;
     }

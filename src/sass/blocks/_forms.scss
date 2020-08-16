@@ -67,12 +67,18 @@
         background: transparent;
         border-radius: 6px;
         border: 1px solid $white;
-        color: $light-grey;
+        color: $white;
         
         transition: all .3s ease-in-out;
         padding: 15px 20px;
       &::placeholder{
-        color: $dark-grey;
+        color: $light-grey;
+        transition: all .3s ease-in-out;
+      }
+      &:focus{
+        &::placeholder{
+            color: $dark-grey;
+          }
       }
     }
     

@@ -19,7 +19,9 @@
 @import './blocks/title';
 @import './blocks/buttons';
 @import './blocks/scrollbar';
+@import './blocks/popup'; 
 @import './libs/slick'; 
+
 
 .wrapper {
     // position: fixed;
@@ -308,5 +310,8 @@
             }
         }
     }
+
+
+
 
 @import './base/media';

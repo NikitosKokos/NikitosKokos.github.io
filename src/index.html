@@ -15,7 +15,24 @@
 
 <body  data-spy="scroll" data-target="#navbar">
  <div class="cursor js-cursor" data-hover="" ></div>
+ <!-- popup -->
+        <div class="popup">
+            <div class="popup__body">
+                <div class="popup__close"><span></span></div>
+                <div class="popup__container _container">
+                    <div class="popup__img" data-da='popup__body,1,767'><img src="./img/works/MIshki.jpg" alt="img"></div>
+                    <div class="popup__title">MIshki</div>
+                    <div class="popup__descr">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus natus doloribus autem nemo. Unde architecto delectus aliquam obcaecati explicabo vel a nesciunt doloremque necessitatibus! Veritatis inventore minima eveniet consectetur, doloremque hic sed quam perspiciatis voluptate!</div>
+                    <div class="popup__category"><a href="#">JS</a><a href="#">Верстка</a></div>
+                    <div class="popup__links">
+                        <a href="#" class="popup__demo">Demo</a>
+                        <a href="#" class="popup__github">GitHub</a>
+                    </div>
+                </div>                
+            </div>
 
+        </div>
+<!-- popup  end-->
         <div id="preloader" class="preloader">
             <span class="preloader__span1"></span>
             <span class="preloader__span2"></span>
@@ -23,7 +40,13 @@
             <span class="preloader__span4"></span>
             <img src="./img/icons/preloader.svg" alt="logo">
         </div>
-        <div class="message"><div class="message__body"><img src="./img/icons/envelope.svg" alt="message"></div></div>
+        <div class="message"><div class="message__body"><div class="message__front"><img src="./img/icons/envelope.svg" alt="message"></div><div class="message__back"><span></span></div></div>
+        <ul class="message__submenu">
+            <li><a href="https://t.me/nikitakokos" target="_blank" ><img src="./img/icons/media/telegram.svg" alt="telegram"></a></li>
+            <li><a href="mailto:nikitaodessafreelance@gmail.com" target="_blank" ><img src="./img/icons/media/mail.svg" alt="mail"></a></li>
+            <li><a href="tel:380951125587" target="_blank" ><img src="./img/icons/phone.svg" alt="phone"></a></li>
+        </ul>
+    </div>
     <div class="wrapper">   
       <!-- header -->
         <header class="header">
@@ -68,7 +91,7 @@
         <section class="section-main">
             <div class="section-main__title"><h1>I will make you <span id="typing-header"></span></h1></div>
             <div class="section-main__subtitle"><h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, ipsum iure.<br> Possimus officia rem beatae a, ullam eaque </h2></div>
-            <a href="#" class="btn"><span>Nikita</span></a>
+            <a href="#" class="btn"><span>Написать</span></a>
             <div class="section-main__bg _ibg"><img src="./img/mainBg.jpg" alt="mainBg"></div>
         </section>
         <svg class="svg-parallax" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -220,47 +243,132 @@
                     <!-- portfolio__content end -->
                 </div>
                 <div class="portfolio__content">
-     
                     <div class="portfolio__item">
                         <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
                         <div class="portfolio__container">
                             <div class="portfolio__text">
                             <div class="portfolio__title">RunSmart</div>
-                        <div class="portfolio__category">Верстка</div>
+                            <div class="portfolio__info">
+                                <div class="portfolio__category">Верстка</div>
+                            </div>
                         </div>
                         </div>
                         
                     </div>
                     <div class="portfolio__item">
-                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
+                        <div class="portfolio__img"><img src="./img/works/Bike.jpg" alt="work"></div>
                         <div class="portfolio__container">
                             <div class="portfolio__text">
-                            <div class="portfolio__title">RunSmart</div>
-                        <div class="portfolio__category">Верстка</div>
+                            <div class="portfolio__title">Bike</div>
+                            <div class="portfolio__info">
+                                <div class="portfolio__category">Верстка</div>
+                            </div>
                         </div>
                         </div>
                         
                     </div>
                     <div class="portfolio__item">
-                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
+                        <div class="portfolio__img"><img src="./img/works/Uber.jpg" alt="work"></div>
                         <div class="portfolio__container">
                             <div class="portfolio__text">
-                            <div class="portfolio__title">RunSmart</div>
-                        <div class="portfolio__category">Верстка</div>
+                            <div class="portfolio__title">Uber</div>
+                            <div class="portfolio__info">
+                                <div class="portfolio__category">Верстка</div>
+                            </div>
+                        
                         </div>
                         </div>
                         
                     </div>
                     <div class="portfolio__item">
-                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
+                        <div class="portfolio__img"><img src="./img/works/Mogo.jpg" alt="work"></div>
                         <div class="portfolio__container">
                             <div class="portfolio__text">
-                            <div class="portfolio__title">RunSmart</div>
-                        <div class="portfolio__category">Верстка</div>
+                            <div class="portfolio__title">Mogo</div>
+                            <div class="portfolio__info">
+                                <div class="portfolio__category">Верстка</div>
+                            </div>
                         </div>
                         </div>
                         
                     </div>
+                    <div class="portfolio__item">
+                        <div class="portfolio__img"><img src="./img/works/ActiveBox.jpg" alt="work"></div>
+                        <div class="portfolio__container">
+                            <div class="portfolio__text">
+                            <div class="portfolio__title">ActiveBox</div>
+                            <div class="portfolio__info">
+                                <div class="portfolio__category">Верстка</div>
+                            </div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                    <div class="portfolio__item">
+                        <div class="portfolio__img"><img src="./img/works/MIshki.jpg" alt="work"></div>
+                        <div class="portfolio__container">
+                            <div class="portfolio__text">
+                            <div class="portfolio__title">Mishki</div>
+                            <div class="portfolio__info">
+                                <div class="portfolio__category">Верстка</div>
+                            </div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                    <!-- portfolio__content end -->
+                </div>
+                <div class="portfolio__content">
+                    <div class="portfolio__item">
+                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
+                        <div class="portfolio__container">
+                            <div class="portfolio__text">
+                            <div class="portfolio__title">RunSmart</div>
+                            <div class="portfolio__info">
+                                <div class="portfolio__category">Верстка</div>
+                            </div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                    <div class="portfolio__item">
+                        <div class="portfolio__img"><img src="./img/works/Bike.jpg" alt="work"></div>
+                        <div class="portfolio__container">
+                            <div class="portfolio__text">
+                            <div class="portfolio__title">Bike</div>
+                            <div class="portfolio__info">
+                                <div class="portfolio__category">Верстка</div>
+                            </div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                    <div class="portfolio__item">
+                        <div class="portfolio__img"><img src="./img/works/Uber.jpg" alt="work"></div>
+                        <div class="portfolio__container">
+                            <div class="portfolio__text">
+                            <div class="portfolio__title">Uber</div>
+                            <div class="portfolio__info">
+                                <div class="portfolio__category">Верстка</div>
+                            </div>
+                        
+                        </div>
+                        </div>
+                        
+                    </div>
+                    <div class="portfolio__item">
+                        <div class="portfolio__img"><img src="./img/works/Mogo.jpg" alt="work"></div>
+                        <div class="portfolio__container">
+                            <div class="portfolio__text">
+                            <div class="portfolio__title">Mogo</div>
+                            <div class="portfolio__info">
+                                <div class="portfolio__category">Верстка</div>
+                            </div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                 
                     
                     <!-- portfolio__content end -->
                 </div>
@@ -270,97 +378,26 @@
                         <div class="portfolio__container">
                             <div class="portfolio__text">
                             <div class="portfolio__title">RunSmart</div>
-                        <div class="portfolio__category">Верстка</div>
+                            <div class="portfolio__info">
+                                <div class="portfolio__category">Верстка</div>
+                            </div>
                         </div>
                         </div>
                         
                     </div>
                     <div class="portfolio__item">
-                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
+                        <div class="portfolio__img"><img src="./img/works/Bike.jpg" alt="work"></div>
                         <div class="portfolio__container">
                             <div class="portfolio__text">
-                            <div class="portfolio__title">RunSmart</div>
-                        <div class="portfolio__category">Верстка</div>
+                            <div class="portfolio__title">Bike</div>
+                            <div class="portfolio__info">
+                                <div class="portfolio__category">Верстка</div>
+                            </div>
                         </div>
                         </div>
                         
                     </div>
-                    <div class="portfolio__item">
-                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
-                        <div class="portfolio__container">
-                            <div class="portfolio__text">
-                            <div class="portfolio__title">RunSmart</div>
-                        <div class="portfolio__category">Верстка</div>
-                        </div>
-                        </div>
-                        
-                    </div>
-                    <div class="portfolio__item">
-                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
-                        <div class="portfolio__container">
-                            <div class="portfolio__text">
-                            <div class="portfolio__title">RunSmart</div>
-                        <div class="portfolio__category">Верстка</div>
-                        </div>
-                        </div>
-                        
-                    </div>
-                    <div class="portfolio__item">
-                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
-                        <div class="portfolio__container">
-                            <div class="portfolio__text">
-                            <div class="portfolio__title">RunSmart</div>
-                        <div class="portfolio__category">Верстка</div>
-                        </div>
-                        </div>
-                        
-                    </div>
-                    <div class="portfolio__item">
-                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
-                        <div class="portfolio__container">
-                            <div class="portfolio__text">
-                            <div class="portfolio__title">RunSmart</div>
-                        <div class="portfolio__category">Верстка</div>
-                        </div>
-                        </div>
-                        
-                    </div>
-                    
-                    <!-- portfolio__content end -->
-                </div>
-                <div class="portfolio__content">
-
-                    <div class="portfolio__item">
-                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
-                        <div class="portfolio__container">
-                            <div class="portfolio__text">
-                            <div class="portfolio__title">RunSmart</div>
-                        <div class="portfolio__category">Верстка</div>
-                        </div>
-                        </div>
-                        
-                    </div>
-                    <div class="portfolio__item">
-                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
-                        <div class="portfolio__container">
-                            <div class="portfolio__text">
-                            <div class="portfolio__title">RunSmart</div>
-                        <div class="portfolio__category">Верстка</div>
-                        </div>
-                        </div>
-                        
-                    </div>
-                    <div class="portfolio__item">
-                        <div class="portfolio__img"><img src="./img/works/RunSmart.jpg" alt="work"></div>
-                        <div class="portfolio__container">
-                            <div class="portfolio__text">
-                            <div class="portfolio__title">RunSmart</div>
-                        <div class="portfolio__category">Верстка</div>
-                        </div>
-                        </div>
-                        
-                    </div>
-                    
+                 
                     <!-- portfolio__content end -->
                 </div>
                 <!-- portfolio__row end -->
